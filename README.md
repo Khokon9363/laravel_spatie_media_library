@@ -1,11 +1,13 @@
 ## Laravel Spatie Media Library
 
-1. User.php
+1) User.php
     To implement the package to our User model use -
+
         use Spatie\MediaLibrary\HasMedia;
         use Spatie\MediaLibrary\InteractsWithMedia;
 
     To defining an collection write on User.php -
+
         use Spatie\MediaLibrary\MediaCollections\File;
         public function registerMediaCollections(): void
         {
@@ -30,6 +32,7 @@
         }
 
     **Those are for relationship on user avatar**
+    
     public function avatar()
     {
         return $this->hasOne(Media::class, 'id', 'avatar_id');
@@ -44,7 +47,8 @@
         return $this->avatar->getUrl('thumb');
     }
     
-2. Handler.php
+2) Handler.php
+
    To defining the appected files write on Handler.php
 
     public function render($request, Throwable $exception)
@@ -55,5 +59,6 @@
         return parent::render($request, $exception);
     }
     
-3. Web.php
-4. AvatarController.php
+3) Web.php
+
+4) AvatarController.php
